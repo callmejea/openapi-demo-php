@@ -51,7 +51,8 @@ Class Http
             {
                 $url = $url . $key . "=" . $value . "&";
             }
-            $length = count($url);
+            //in language php , count sting length use strlen or mb_strlen(for chinese), here is wrong
+            $length = strlen($url);
             if ($url[$length - 1] == '&')
             {
                 $url = substr($url, 0, $length - 1);
